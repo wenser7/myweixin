@@ -8,11 +8,7 @@ var AV = require('leanengine');
 
 // 加载云函数定义，你可以将云函数拆分到多个文件方便管理，但需要在主文件中加载它们
 require('./cloud');
-AV.init({
-	appID:process.env.LEANCLOUD_APP_ID ||'UmGW0TGTat57n13G7mQxpWjb-gzGzoHsz',
-	appKey: process.env.LEANCLOUD_APP_KEY ||'mUtsWdQRYMgjFcsQSPLa1l72',
-	masterKey:process.env.LEANCLOUD_APP_MASTER_KEY ||'2eaqX6F3U7agtmJyJhrweXWd'
-});
+
 var app = express();
 
 // 设置模板引擎
@@ -77,5 +73,5 @@ app.use(function(err, req, res, next) {
     error: error
   });
 });
-app.listen(process.env.LEANCLOUD_APP_PORT);
+
 module.exports = app;
